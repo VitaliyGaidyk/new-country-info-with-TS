@@ -1,1 +1,1 @@
-# new-country-info-withTS
+# Old project, with TS, ChakraUI, RTK
