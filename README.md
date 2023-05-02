@@ -1,1 +1,1 @@
-# Old project, with TS, ChakraUI, RTK
+# Refatoring old project, with Vite, TS, ChakraUI, RTK
