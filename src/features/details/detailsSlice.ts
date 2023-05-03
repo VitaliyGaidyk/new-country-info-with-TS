@@ -1,9 +1,9 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {CountryData, ExtraParams} from "../countries/CountyListSlice.ts";
-import {Country} from "../../app/appState.ts";
+import {ExtraParams} from "../countries/CountyListSlice.ts";
+import {Country, CountryItem} from "../../app/appState.ts";
 
 interface DetailsState {
-	currentCountry: CountryData | null;
+	currentCountry: CountryItem | null;
 	neighbors: string[];
 	status: "idle" | "loading" | "received" | "rejected";
 	error: null | string;
