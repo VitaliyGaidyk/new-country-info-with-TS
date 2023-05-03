@@ -19,4 +19,5 @@ export type Country = {
 	region: Region,
 }
 
+
 export type Region = 'Asia' | 'Europe' | 'Americas' | 'Africa' | 'Oceania'

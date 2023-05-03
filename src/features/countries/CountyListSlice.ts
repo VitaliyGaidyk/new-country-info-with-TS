@@ -3,12 +3,12 @@ import {AxiosInstance} from 'axios';
 import {Api} from "../../config.ts";
 import {AppState, Country, Region} from "../../app/appState.ts";
 
-type ExtraParams = {
+export type ExtraParams = {
 	client: AxiosInstance;
 	api: Api;
 };
 
-type CountryData = {
+export type CountryData = {
 	data?: Country[]
 }
 
