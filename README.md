@@ -1,1 +1,1 @@
-# new-country-info-withTS
+# Refatoring old project, with Vite, TS, ChakraUI, RTK
