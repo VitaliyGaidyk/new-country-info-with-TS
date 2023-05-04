@@ -10,7 +10,7 @@ const Header: React.FC = () => {
 	return (
 		<Flex padding='20px 0' bg={bg} boxShadow='dark-lg'>
 			<Container maxW='container.lg'>
-				<Flex justifyContent='space-between' margin='0 auto'>
+				<Flex justifyContent='space-between' margin='0 auto' alignItems='center'>
 					<Text cursor='pointer' onClick={cleanRegion}>
 						Where is the world?
 					</Text>

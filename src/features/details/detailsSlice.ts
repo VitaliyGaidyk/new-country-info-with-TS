@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {ExtraParams} from "../countries/CountyListSlice.ts";
-import {Country, CountryItem} from "../../app/appState.ts";
+import {AppState, Country, CountryItem} from "../../app/appState.ts";
 
 interface DetailsState {
 	currentCountry: CountryItem | null;
@@ -66,9 +66,9 @@ const detailsSlice = createSlice({
 	}
 })
 
-export const selectCurrentCountry = (state) => state.details.currentCountry
-export const selectDetails = (state) => state.details
-export const selectNeighbors = (state) => state.details.neighbors
+export const selectCurrentCountry = (state: AppState) => state.details.currentCountry
+export const selectDetails = (state: AppState) => state.details
+export const selectNeighbors = (state: AppState) => state.details.neighbors
 
 export const {clearDetails} = detailsSlice.actions
 export const detailsReducer = detailsSlice.reducer

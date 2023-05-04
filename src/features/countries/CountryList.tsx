@@ -4,10 +4,12 @@ import * as React from "react";
 import List from "../../components/List.tsx";
 import {useAppSelector} from "../../app/hooks.ts";
 import {selectCountriesInfo} from "./CountyListSlice.ts";
+import {useNavigate} from "react-router-dom";
 
 const CountryList: React.FC = () => {
 	const {status, error} = useAppSelector(selectCountriesInfo)
 	const [countries] = useCountry()
+	const navigate = useNavigate()
 
 	return (
 		<>
@@ -35,8 +37,7 @@ const CountryList: React.FC = () => {
 
 						return (
 							<Card
-								key={country.name}
-								// onClick={() => navigate(`/country/${country.name}`)}
+								key={country.name} onClick={() => navigate(`/country/${country.name}`)}
 								{...countryInfo}
 							/>
 						);
@@ -44,7 +45,6 @@ const CountryList: React.FC = () => {
 				</List>
 			)}
 			{status === 'rejected' && <p>{error}</p>}
-			Country list
 		</>
 	);
 };

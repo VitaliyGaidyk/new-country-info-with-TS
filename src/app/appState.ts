@@ -8,6 +8,10 @@ export type AppState = {
 		error: string | null
 		status: string
 	}
+	details: {
+		currentCountry: CountryItem
+		neighbors: string[]
+	}
 }
 
 export type Country = {
