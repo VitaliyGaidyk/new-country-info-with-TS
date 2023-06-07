@@ -9,7 +9,7 @@ interface CountryDetailsProps {
 	navigate: (item) => void
 }
 
-const CountryDetails: React.FC = (props: CountryDetailsProps) => {
+const CountryDetails: React.FC<CountryDetailsProps> = (props: CountryDetailsProps) => {
 	const {navigate, name} = props
 	const {currentCountry} = UseDetails(name)
 	const {status} = useAppSelector(selectCountriesInfo)
