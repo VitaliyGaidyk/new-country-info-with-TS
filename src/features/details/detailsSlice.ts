@@ -1,9 +1,9 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {ExtraParams} from "../countries/CountyListSlice.ts";
-import {AppState, Country, CountryItem} from "../../app/appState.ts";
+import {Country, CountryItem} from "../../app/appState.ts";
 
 interface DetailsState {
-	currentCountry: CountryItem | null;
+	currentCountry: CountryItem | unknown;
 	neighbors: string[];
 	status: "idle" | "loading" | "received" | "rejected";
 	error: null | string;
@@ -12,6 +12,7 @@ interface DetailsState {
 interface LoadCountryByNameThunkArg {
 	name: string;
 	extra: ExtraParams;
+	data?: Country[];
 }
 
 interface LoadNeighborsBorderThunkArg {
@@ -54,7 +55,7 @@ const detailsSlice = createSlice({
 			})
 			.addCase(loadCountryByName.fulfilled, (state, action) => {
 				state.status = 'idle'
-				state.currentCountry = (action.payload && action.payload[0]) || []
+				state.currentCountry = (action.payload.data && action.payload.data[0]) || []
 			})
 			.addCase(loadCountryByName.rejected, (state, action) => {
 				state.status = 'rejected'
@@ -66,9 +67,9 @@ const detailsSlice = createSlice({
 	}
 })
 
-export const selectCurrentCountry = (state: AppState) => state.details.currentCountry
-export const selectDetails = (state: AppState) => state.details
-export const selectNeighbors = (state: AppState) => state.details.neighbors
+export const selectCurrentCountry = (state) => state.details.currentCountry
+export const selectDetails = (state) => state.details
+export const selectNeighbors = (state) => state.details.neighbors
 
 export const {clearDetails} = detailsSlice.actions
 export const detailsReducer = detailsSlice.reducer

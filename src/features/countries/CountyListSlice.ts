@@ -69,7 +69,7 @@ export const selectVisibleCountries = (state: AppState, controls: ControlsData):
 	)
 }
 
-export const selectCountriesInfo = (state: AppState) => ({
+export const selectCountriesInfo = (state) => ({
 	status: state.countries.status,
 	error: state.countries.error,
 })

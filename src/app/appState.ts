@@ -35,6 +35,7 @@ export type CountryItem = {
 		name: string;
 		symbol: string;
 	}[];
+	borders?: string[];
 	demonym: string;
 	flag: string;
 	flags: {
