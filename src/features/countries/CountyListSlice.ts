@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {AxiosInstance} from 'axios';
 import {Api} from "../../config.ts";
-import {AppState, Country, Region} from "../../app/appState.ts";
+import {Country, Region} from "../../app/appState.ts";
 
 export type ExtraParams = {
 	client: AxiosInstance;
@@ -60,7 +60,7 @@ type ControlsData = {
 	region: Region | string
 }
 
-export const selectVisibleCountries = (state: AppState, controls: ControlsData): Country[] => {
+export const selectVisibleCountries = (state, controls: ControlsData): Country[] => {
 	const {search = '', region = ''} = controls
 
 	return state.countries.data.filter(country => (

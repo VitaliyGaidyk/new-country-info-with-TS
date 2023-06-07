@@ -4,7 +4,6 @@ import CountryDetails from "../features/details/CountryDetails";
 import {Box, Button} from "@chakra-ui/react";
 import React from "react";
 
-
 export const Details: React.FC = () => {
 	const navigate = useNavigate();
 	const {name} = useParams();

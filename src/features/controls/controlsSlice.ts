@@ -1,5 +1,4 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {AppState} from "../../app/appState.ts";
 
 const initialState = {
 	search: '',
@@ -20,9 +19,9 @@ const controlsSlice = createSlice({
 	}
 })
 
-export const selectSearch = (state: AppState) => state.control.search
-export const selectRegion = (state: AppState) => state.control.region
-export const selectControls = (state: AppState) => state.control
+export const selectSearch = (state) => state.control.search
+export const selectRegion = (state) => state.control.region
+export const selectControls = (state) => state.control
 
 export const {setSearch, setRegion, clearControls} = controlsSlice.actions
 export const controlReducer = controlsSlice.reducer

@@ -20,7 +20,10 @@ const Controls: React.FC = () => {
 	return (
 		<Flex mb='30px'>
 			<Search/>
-			<CustomSelect items={items} onChange={(newValue) => dispatch(setRegion(newValue))} value={value}/>
+			<CustomSelect items={items}
+			              onChange={(newValue) => dispatch(setRegion(newValue))}
+			              value={value}
+			/>
 		</Flex>
 	);
 };
