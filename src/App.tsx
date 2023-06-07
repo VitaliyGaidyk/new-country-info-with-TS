@@ -3,6 +3,7 @@ import Main from "./components/Main.tsx";
 import {Route, Routes} from "react-router-dom";
 import HomePage from "./pages/HomePage.tsx";
 import {Details} from "./pages/Details.tsx";
+import {NotFound} from "./pages/NotFound.tsx";
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<HomePage/>}/>
 					<Route path="/country/:name" element={<Details/>}/>
-					{/*<Route path="*" element={<NotFound/>}/>*/}
+					<Route path="*" element={<NotFound/>}/>
 				</Routes>
 			</Main>
 		</>
