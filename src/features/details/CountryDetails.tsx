@@ -13,7 +13,7 @@ const CountryDetails: React.FC<CountryDetailsProps> = (props: CountryDetailsProp
 	const {navigate, name} = props
 	const {currentCountry} = UseDetails(name)
 	const {status} = useAppSelector(selectCountriesInfo)
-	console.log(currentCountry)
+
 	return (
 		<>
 			{status === 'loading' && <h2>Loading...</h2>}

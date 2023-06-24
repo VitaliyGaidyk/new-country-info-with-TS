@@ -5,7 +5,12 @@ import {useAppDispatch, useAppSelector} from "../../app/hooks.ts";
 import {selectRegion, setRegion} from "./controlsSlice.ts";
 import * as React from "react";
 
-const items = [
+export interface ItemsData {
+	value: string
+	label: string
+}
+
+const items: ItemsData[] = [
 	{value: 'Africa', label: 'Africa'},
 	{value: 'America', label: 'America'},
 	{value: 'Asia', label: 'Asia'},
@@ -15,14 +20,14 @@ const items = [
 
 const Controls: React.FC = () => {
 	const dispatch = useAppDispatch()
-	const value = useAppSelector(selectRegion)
+	const valueRegion = useAppSelector(selectRegion)
 
 	return (
 		<Flex mb='30px'>
 			<Search/>
 			<CustomSelect items={items}
 			              onChange={(newValue) => dispatch(setRegion(newValue))}
-			              value={value}
+			              valueRegion={valueRegion}
 			/>
 		</Flex>
 	);

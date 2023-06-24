@@ -1,14 +1,24 @@
 import {Button, Menu, MenuButton, MenuItem, MenuList} from "@chakra-ui/react";
 import {BiChevronDown} from "react-icons/bi";
+import React from "react";
+import {ItemsData} from "./Controls.tsx";
 
+interface CustomSelectProps {
+	items: ItemsData[]
+	onChange: (value: string) => void
+	valueRegion: string
+}
 
-const CustomSelect = (props) => {
-	const {items, onChange, value} = props
+const CustomSelect: React.FC<CustomSelectProps> = (props) => {
+	const {items, onChange, valueRegion} = props
 
 	return (
 		<Menu>
-			<MenuButton as={Button} rightIcon={<BiChevronDown/>} minW='150px'>
-				{items.find(item => item.value === value)?.label || 'region...'}
+			<MenuButton as={Button}
+			            rightIcon={<BiChevronDown/>}
+			            minW='150px'
+			>
+				{items.find(item => item.value === valueRegion)?.label || 'region...'}
 			</MenuButton>
 			<MenuList>
 				{items.map((option) => (

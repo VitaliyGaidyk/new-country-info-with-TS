@@ -36,8 +36,12 @@ const Info: React.FC = (props: InfoProps) => {
 				<Heading as='h2' size='2xl'>
 					{name}
 				</Heading>
-				<Stack gap={{base: 2, xl: 4}} flexDirection={{xl: 'row'}}>
-					<UnorderedList listStyleType='none' m='0'>
+				<Stack gap={{base: 2, xl: 4}}
+				       flexDirection={{xl: 'row'}}
+				>
+					<UnorderedList listStyleType='none'
+					               m='0'
+					>
 						<ListItem fontSize='xl'>
 							<b>Native Name: </b>{nativeName}
 						</ListItem>

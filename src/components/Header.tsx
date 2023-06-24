@@ -9,7 +9,10 @@ const Header: React.FC = () => {
 	const bg = useColorModeValue('white', 'uiBase.100')
 
 	return (
-		<Flex padding='20px 0' bg={bg} boxShadow='dark-lg'>
+		<Flex padding='20px 0'
+		      bg={bg}
+		      boxShadow='dark-lg'
+		>
 			<Container maxW='container.lg'>
 				<Flex justifyContent='space-between'
 				      margin='0 auto'

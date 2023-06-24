@@ -15,8 +15,18 @@ const Card: React.FC<CardProps> = (props) => {
 	const {img, name, info = [], onClick} = props
 
 	return (
-		<Box boxShadow='dark-lg' cursor='pointer' overflow='hidden' borderRadius={20} onClick={onClick}>
-			<Image src={img} objectPosition='center' objectFit='cover' height={150} width='100%'/>
+		<Box boxShadow='dark-lg'
+		     cursor='pointer'
+		     overflow='hidden'
+		     borderRadius={20}
+		     onClick={onClick}
+		>
+			<Image src={img}
+			       objectPosition='center'
+			       objectFit='cover'
+			       height={150}
+			       width='100%'
+			/>
 			<Box padding='20px 25px'>
 				<Box>
 					{name}
